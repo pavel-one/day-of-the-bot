@@ -1,0 +1,21 @@
+{
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.buildFlags": [],
+    "go.vetFlags": [],
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/*.db": true,
+        "**/bot": true,
+        "**/*.exe": true
+    },
+    "go.toolsManagement.autoUpdate": true
+}

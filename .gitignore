@@ -1,0 +1,34 @@
+# Бинарные файлы
+bot
+bot.exe
+*.exe
+*.dll
+*.so
+*.dylib
+
+# База данных
+*.db
+*.sqlite
+*.sqlite3
+
+# Конфигурация
+.env
+.env.development
+.env.local
+
+# Go
+*.test
+*.out
+vendor/
+
+# IDE (но оставляем .vscode для проекта)
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log

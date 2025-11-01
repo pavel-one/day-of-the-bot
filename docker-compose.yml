@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  day-of-the-bot:
+    build: .
+    container_name: day-of-the-bot
+    restart: unless-stopped
+    environment:
+      # Основные настройки
+      - BOT_TOKEN=${BOT_TOKEN:-}
+      - DB_PATH=/app/data/bot.db
+      - DEBUG=${DEBUG:-false}
+    volumes:
+      # Монтируем том для сохранения базы данных
+      - bot_data:/app/data
+    networks:
+      - bot_network
+    # Ограничения ресурсов
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+          cpus: '0.5'
+        reservations:
+          memory: 32M
+          cpus: '0.1'
+
+volumes:
+  bot_data:
+    driver: local
+
+networks:
+  bot_network:
+    driver: bridge
